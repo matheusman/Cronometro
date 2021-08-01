@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+body {
+    background-color: #F0F8FF;
+    text-align: center;
+    font-family: 'Gugi', cursive;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+#funcionalidade {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#cronometro {
+    display: flex;
+}
+
+#cronometro h1 h3{
+    align-self:flex-end;
+}
+
+#cronometro h3 {
+    position: relative;
+    margin-top: 35px;
+}
+
+
+.main button {
+    margin-right: 15px;
+    width: 100px;
+    border: 1px solid #c9e6fc;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+#funcionalidade button:nth-of-type(1) {
+    background-color: #59429d;
+    color: #F0F8FF;
+}
+
+#funcionalidade button:nth-of-type(2) {
+    color: #ffffff;
+    background-color: #ee1e52;
+}
+
+#funcionalidade button:nth-of-type(1):hover {
+    color: #ffffff;
+    background-color: #6666eb;
+}
+
+#funcionalidade button:nth-of-type(2):hover {
+    background-color: #da3947;
+    color: white;
+}
+
+#cronometro {
+    margin-bottom: 30px;
+}
+
+#voltar {
+    margin-top: 20px;
+    width: 600px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#voltar h3{
+    margin: 15px;
+}
