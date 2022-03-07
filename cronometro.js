@@ -66,6 +66,7 @@ function restartCronometro() {
     voltarMinutes = 0
     voltarSeconds = 0
     voltarthousandth = 0
+    cont = 0
 }
 
 function stopCronometro() {
