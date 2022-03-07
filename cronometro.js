@@ -16,9 +16,8 @@ const interval = () => myinterval = setInterval(() => {
     thousandth++
     if (thousandth === 60) {
         seconds++
-        thousandth = 0   
-    }
-    else if (seconds === 60) {
+        thousandth = 0
+    } else if (seconds === 60) {
         minutes++
         seconds = 0
     } else if (minutes === 24) {
@@ -29,8 +28,7 @@ const interval = () => myinterval = setInterval(() => {
     if (voltarthousandth === 60) {
         voltarSeconds++
         voltarthousandth = 0
-    } 
-    else if (voltarSeconds === 60) {
+    } else if (voltarSeconds === 60) {
         voltarMinutes++
         voltarSeconds = 0
     } else if (voltarMinutes === 60) {
@@ -38,12 +36,12 @@ const interval = () => myinterval = setInterval(() => {
     }
 
     const divs = `<h3>${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${thousandth.toString().padStart(2, '0')}</h3>`
-    const divsVolt =  `<h3>${voltarMinutes.toString().padStart(2, '0')}:${voltarSeconds.toString().padStart(2, '0')}:${voltarthousandth.toString().padStart(2, '0')}</h3>`
+    const divsVolt = `<h3>${voltarMinutes.toString().padStart(2, '0')}:${voltarSeconds.toString().padStart(2, '0')}:${voltarthousandth.toString().padStart(2, '0')}</h3>`
     document.getElementById('timer').innerHTML = divs
     document.getElementById('number').innerHTML = cont + 1
     document.getElementById('hora').innerHTML = divsVolt
     document.getElementById('number-fixed').innerHTML = divs
-}, 10)
+}, 15)
 
 function startCronometro() {
     myClearInterval()
@@ -54,10 +52,14 @@ function startCronometro() {
     document.getElementById('stop').style.display = 'block'
 }
 
-function restartCronometro () {
+function restartCronometro() {
     myClearInterval()
     document.getElementById('timer').innerHTML = `<h3>00:00:00</h3>`
-    document.getElementById('voltar').innerHTML = ''
+    const voltar = document.getElementById('voltar')
+    voltar.innerHTML = `
+        <div id="content-timer" class="voltarTimerId"><div class="number">Voltar</div><div>Hora</div><div>Tempo total</div></div>
+        <div id="fixed-timer-voltar" class="voltarTimerId"><div id="number"></div><div id="hora"></div ><div id="number-fixed"></div></div>`
+    voltar.style.display = 'none'
     thousandth = 0
     seconds = 0
     minutes = 0
@@ -66,7 +68,7 @@ function restartCronometro () {
     voltarthousandth = 0
 }
 
-function stopCronometro () {
+function stopCronometro() {
     myClearInterval()
     document.getElementById('start').style.display = 'block'
     document.getElementById('restart').style.display = 'block'
@@ -74,11 +76,12 @@ function stopCronometro () {
     document.getElementById('stop').style.display = 'none'
 }
 
-function voltarCronometro () {
+function voltarCronometro() {
     cont++
     const voltar = document.getElementById('voltar')
     const timer = document.getElementById('timer')
     const hora = document.getElementById('hora')
+    voltar.style.display = 'flex'
     voltar.innerHTML += `<div class="voltarTimerId"><div class="number">${cont}</div><div>${hora.innerHTML}</div><div>${timer.innerHTML}</div></div>`
     voltarMinutes = 0
     voltarSeconds = 0
