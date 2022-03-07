@@ -45,12 +45,6 @@ const interval = () => myinterval = setInterval(() => {
     document.getElementById('number-fixed').innerHTML = divs
 }, 10)
 
-const Voltarinterval = () => myinterval = setInterval(() => {
-    
-    const divs = `<h3>${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${thousandth.toString().padStart(2, '0')}</h3>`
-
-}, 10)
-
 function startCronometro() {
     myClearInterval()
     interval()
