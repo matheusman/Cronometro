@@ -1,8 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
 
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
 body {
     background-color: #F0F8FF;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;    
+    flex-direction: column;
     font-family: 'Gugi', cursive;
 }
 
@@ -21,20 +31,6 @@ body {
     align-items: center;
 }
 
-#cronometro {
-    display: flex;
-}
-
-#cronometro h1 h3{
-    align-self:flex-end;
-}
-
-#cronometro h3 {
-    position: relative;
-    margin-top: 35px;
-}
-
-
 .main button {
     margin-right: 15px;
     width: 100px;
@@ -43,24 +39,28 @@ body {
     padding: 15px;
 }
 
-#funcionalidade button:nth-of-type(1) {
+#restart {
     background-color: #59429d;
     color: #F0F8FF;
 }
 
-#funcionalidade button:nth-of-type(2) {
+#start {
     color: #ffffff;
     background-color: #ee1e52;
 }
 
-#funcionalidade button:nth-of-type(1):hover {
+#restart:hover {
     color: #ffffff;
     background-color: #6666eb;
 }
 
-#funcionalidade button:nth-of-type(2):hover {
-    background-color: #da3947;
+#start:hover {
+    background-color: #f76c77;
     color: white;
+}
+
+#start:hover, #restart, #mark:hover, #stop:hover {
+    cursor: pointer;
 }
 
 #cronometro {
@@ -69,12 +69,53 @@ body {
 
 #voltar {
     margin-top: 20px;
-    width: 600px;
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    width: 300px;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 #voltar h3{
     margin: 15px;
+}
+
+#stop {
+    color: white;
+    background-color: #c49643;
+    display:none;
+}
+
+#stop:hover {
+    color: white;
+    background-color: #d8a649;
+}
+
+#mark {
+    color: white;
+    background-color: black;
+    display:none;
+}
+
+#mark:hover {
+    color: white;
+    background-color: rgb(41, 41, 41);
+}
+
+.voltarTimerId {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.number {
+    width: 40px;
+}
+
+#fixed-timer-voltar {
+    order: 1;
+}
+
+#content-timer {
+    order: 2;
 }
